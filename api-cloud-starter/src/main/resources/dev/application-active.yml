@@ -1,0 +1,41 @@
+#对外端口
+server:
+  port: 6028
+#单独访问时，可以使用访问路径，和网关配置的路由一样
+#  servlet:
+#    context-path: /api/info-api
+
+spring:
+  #微服务配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 114.67.98.100:8848
+#        server-addr: 127.0.0.1:8848
+  application:
+    name: api-cloud-starter
+  # 数据库配置
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3300/knowtree?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+  resources:
+    static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/
+  #增加上传限制
+  servlet:
+    multipart:
+      #10000M
+      max-file-size: 1000Mb
+      max-request-size: 1000Mb
+      file-size-threshold: 1Mb # 当上传文件达到1MB的时候进行磁盘写入
+
+
+#mybatis-plus默认配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  #类别名，支持通配符 * 或者 ; 分割
+  typeAliasesPackage: com.weng.**.mapper
+
+
+
