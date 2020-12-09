@@ -1,0 +1,205 @@
+.task-tree {
+  border-radius: 5px;
+  background-color: #fff;
+  .tree-filter {
+    padding-left: 20px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: inset 0px -1px 0px 0px rgba(238,238,238,1);
+    .filter-txt {
+      padding-left: 4px;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+    }
+    .icon {
+      margin-right: 24px;
+      margin-top: 24px;
+      color: #666;
+      transform: rotate(0deg);
+      transition: all linear 0.2s;
+    }
+    p {
+      margin-right: 46px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .label-sub {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-top: 19px;
+      margin-right: 8px;
+      line-height: 22px;
+      vertical-align: top;
+      border-radius: 2px;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      font-style: normal;
+      background-color: #F5A623;
+    }
+  }
+  // 饿了么树形控件
+  .el-tree {
+    // max-width: 214px;
+    height: 460px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // .el-icon-caret-right:before {
+    //   content: "\e69a";
+    // }
+    .task-tree__tree {
+      position: relative;
+      display: block;
+      padding-left: 20px;
+      padding-right: 43px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      // &.is-curr {
+      //   background-color: transparent;
+      //   &:before {
+      //     position: absolute;
+      //     display: inline-block;
+      //     content: "";
+      //     height: 100%;
+      //     width: 4px;
+      //     background-color: #CC9967;
+      //     left: 0;
+      //     top: 0;
+      //   }
+      //   // border-left: 4px solid #CC9967;
+      //   // background-color: rgba(211,165,115,0.12);
+      // }
+    }
+  }
+  .el-tree > .el-tree-node.is-focusable.is-expanded > .el-tree-node__content {
+    position: relative;
+    background-color: transparent;
+    &:before {
+      position: absolute;
+      display: inline-block;
+      content: "";
+      height: 100%;
+      width: 4px;
+      background-color: #CC9967;
+      left: 0;
+      top: 0;
+    }
+    // border-bottom: 1px solid #F5F6F7;
+  }
+  .el-tree-node__children {
+    // border-bottom: 1px solid #F5F6F7;
+    .el-tree-node {
+      border: none;
+    }
+    .task-tree__tree {
+      padding-left: 14px;
+    }
+  }
+  .el-tree-node__content {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    overflow: hidden;
+    &:hover {
+      background-color: rgba($color: #E5C59E, $alpha: 0.1);
+      color: #CC9967;
+    }
+    & > .el-tree-node__expand-icon {
+      position: absolute;
+      right: 24px;
+      padding: 0;
+      transform: rotate(90deg);
+      &:not(.is-leaf) {
+        color: #666;
+      }
+    }
+  }
+  .el-tree-node:focus > .el-tree-node__content {
+    background-color: rgba($color: #E5C59E, $alpha: 0.1);
+  }
+  .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+    // position: relative;
+    // &:before {
+    //   position: absolute;
+    //   display: inline-block;
+    //   content: "";
+    //   height: 100%;
+    //   width: 4px;
+    //   background-color: #CC9967;
+    //   left: 0;
+    //   top: 0;
+    // }
+    // border-left: 4px solid #CC9967;
+    // background-color: transparent;
+    background-color: rgba($color: #E5C59E, $alpha: 0.1);
+    color: #CC9967;
+  }
+  .el-tree-node__expand-icon.expanded {
+    transform: rotate(-90deg);
+  }
+ .task-tree__popper {
+    &.el-popper {
+      width: 324px;
+      margin-top: 4px;
+      padding: 0;
+    }
+    .filter-pop {
+      padding: 0 20px 24px;
+      line-height: 22px;
+      font-size: 14px;
+      color: #A3A3A3;
+      .filter-pop__row {
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .filter-pop__label {
+        margin-top: 10px;
+        color: #333;
+      }
+      .filter-pop__list {
+        margin-top: -6px;
+        margin-left: -44px;
+        overflow: hidden;
+      }
+      .filter-pop__item {
+        float: left;
+        cursor: pointer;
+        margin-top: 16px;
+        margin-left: 44px;
+
+      }
+      &.row-line {
+        padding: 0;
+        .filter-pop__row {
+          height: 60px;
+          padding: 0 24px;
+          line-height: 60px;
+          font-size: 16px;
+          font-style: normal;
+          color: #333;
+
+        }
+        .label-sub {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          margin-top: 19px;
+          margin-right: 8px;
+          line-height: 22px;
+          vertical-align: top;
+          border-radius: 2px;
+          text-align: center;
+          font-size: 14px;
+          color: #fff;
+          font-style: normal;
+          background-color: #F5A623;
+        }
+      }
+    }
+  }
+}

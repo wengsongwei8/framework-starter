@@ -1,0 +1,7 @@
+server:
+  port: 8000
+
+elasticsearch:
+  ip: 172.30.0.21:9200
+  elasticsearchHost: 172.30.0.21
+  port: 9200
